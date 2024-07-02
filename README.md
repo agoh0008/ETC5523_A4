@@ -1,4 +1,6 @@
-# gradmajors
+# ETC5523: Assignment 4 - gradmajors R Package
+
+This repository contains the work and materials for Assignment 4 of the ETC5523 unit (Communicating with Data).
 
 ## Overview
 
