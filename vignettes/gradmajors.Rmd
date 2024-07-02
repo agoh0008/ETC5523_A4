@@ -1,0 +1,140 @@
+---
+title: "gradmajors: U.S. College Majors Data Visualization and Analysis"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gradmajors: U.S. College Majors Data Visualization and Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message = FALSE, warning = FALSE, echo = FALSE}
+library(gradmajors)
+library(tidyverse)
+library(knitr)
+```
+
+# Introduction
+
+The `gradmajors` package provides a collection of functions and tools for visualizing and analyzing data related to U.S. college majors from the years 2010 to 2012.  It offers insights into employment rates, gender representation, and more, making it a valuable resource for exploring trends in college education and career outcomes. 
+
+This package is ideal for researchers, educators, and data enthusiasts interested in understanding the landscape of college majors in the United States.
+
+
+# Installation & Getting Started
+
+You can install the `gradmajors` package from GitHub using the `devtools` package:
+
+```r
+devtools::install_github("ETC5523-2023/rpkg-agoh0008")
+```
+
+```r
+library(gradmajors)
+```
+
+# Load Data
+
+To load the included dataset for this package, you can run the following command:
+
+```r 
+data(recent_grads)
+```
+
+Below shows an example of the first six rows of the **'recent_grads'** dataset:
+
+```{r echo = FALSE}
+kable(head(recent_grads), format = "html") 
+```
+
+
+# Functions
+
+The following functions allow you to investigate employment rates, gender representation, and more, providing valuable insights into higher education and career outcomes in the United States.
+
+## average_employment_rate
+
+Calculate the average employment rate for a specific major category. The employment rate is calculated as 100% minus the unemployment rate.
+
+```R
+average_employment_rate(data, major_category)
+```
+
+- **'data':** A data frame containing the dataset.
+- **'major_category':** The major category for which you want to calculate the average employment rate.
+
+
+### Example usage:
+
+```{r}
+average_employment_rate(recent_grads, "Engineering")
+```
+
+## calc_female_grad_percent
+
+Calculate the percentage of female graduates in a specific major category.
+
+```R
+calc_female_grad_percent(data, major_category)
+```
+
+- **'data':** A data frame containing the dataset.
+- **'major_category':** The major category for which you want to calculate the proportion of female graduates.
+
+
+### Example usage:
+
+```{r}
+calc_female_grad_percent(recent_grads, "Business")
+```
+
+## generate_gender_representation_plot
+
+Generate an interactive plot displaying the gender distribution for college majors within a specific major category.
+
+```R
+generate_gender_representation_plot(major_category, selected_major, data)
+```
+
+- **'major_category':** The major category you want to analyze.
+- **'selected_major':** A character vector specifying one or more specific majors within the major category. Use "All" to include all majors in the category.
+- **'data':** A data frame containing the dataset.
+
+### Interactive Features
+
+This interactive plot allows users to:
+
+- Hover over data points to view additional information.
+- Click and drag to zoom in on specific areas of the plot.
+
+### Example usage:
+
+Here's an example of how to generate and interact with the plot:
+
+```{r, fig.width= 8, fig.height = 4}
+generate_gender_representation_plot("Arts", "All", recent_grads)
+```
+
+```{r, fig.width= 8, fig.height = 4}
+generate_gender_representation_plot("Engineering", c("Architecture", "Civil Engineering"), recent_grads)
+```
+
+## run_app
+
+Launch a Shiny application that provides interactive visualizations and analysis tools for U.S. college majors data (2010-2012).
+
+### Example usage:
+
+```R
+run_app()
+```
+
+# License
+
+This package is licensed under the MIT License. See the [LICENSE](https://651504bc692f1e482ff781ae--rpkg-agoh0008-35d745.netlify.app/license) file for details.

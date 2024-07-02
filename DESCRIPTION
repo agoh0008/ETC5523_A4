@@ -1,0 +1,23 @@
+Package: gradmajors
+Type: Package
+Title: U.S. College Majors Data Visualization and Analysis
+Version: 0.0.1
+Authors@R: 
+    person("Alexandra", "Goh", , "agoh0008@student.monash.edu", role = c("aut", "cre"))
+Description: The 'gradmajors' package provides a collection of tools and functions to explore and analyze U.S. college majors data from 2010 to 2012. Uncover insights into employment rates, gender representation, and more in the American higher education landscape. Calculate average employment rates, assess the percentage of female graduates, create interactive gender distribution plots, and launch a Shiny application for immersive data analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+LazyData: true
+Depends: 
+    R (>= 2.10)
+Imports: dplyr, plotly, shiny, tidyverse, ggplot2, tidyr, janitor, usethis, scales
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+URL: https://651d0a6021358814d1ed92a9--rpkg-agoh0008-35d745.netlify.app/

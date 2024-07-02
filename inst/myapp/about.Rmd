@@ -1,0 +1,30 @@
+
+#### **Data**
+
+This data presents economic statistics (including median earnings, employment rates, 
+gender distribution and more) for different college fields of study. The data is originally sourced 
+from [American Community Survey 2010-2012 Public Use Microdata Series](https://www.census.gov/programs-surveys/acs/news/data-releases.html), with the main dataset being extracted from the [TidyTuesday GitHub Repository](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-16).
+
+
+#### **Purpose**
+
+The purpose of the app is to:
+
+1. provide an interactive platform for exploring economic data related to college majors and help users make informed educational/career decisions,
+2. highlight majors with significant gender representation gaps, prompting users to reflect on these disparities and their implications, and
+3. help users identify which college majors offer higher employment opportunities and median earnings. 
+
+The data facilitates straightforward comparison of the number of male and female graduates across different college majors, highlighting gender representation disparities. The app also uses an interactive bubble chart to display major categories with their corresponding employment rates and median earnings, where users can gain a better perspective on how certain fields may be more in demand than others (note: size of each bubble represents total number of graduates). Finally, users can receive personalized major suggestions based on their input; recommendations also include information on median earnings, employment rates and job distributions for each relevant major.
+
+
+#### **Creator**
+
+Alexandra Goh (agoh0008@student.monash.edu)
+
+<details>
+<summary>Session information</summary>
+
+```{r, echo = TRUE}
+sessioninfo::session_info()
+```
+</details>
